@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require("mongoose");
+const User = require('./models/user');
 
 mongoose.connect('mongodb://localhost:27017/backendApp', { 
     useNewUrlParser: true,
@@ -14,8 +15,14 @@ db.once("open",()=>{
 
 const app = express();
 
-app.get("/", (req,res) => {
-    res.send('WOOF!')
+app.get("/users", async (req,res) => {
+    const users = await User.find({});
+    res.status(200).send(users);
+});
+
+app.get("/users/:id", async(req,res)=>{
+    const user = await User.findById(req.params.id);
+    res.status(200).send(user);
 })
 
 app.listen(3000, ()=> {
