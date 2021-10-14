@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser")
 const User = require('./models/user');
 
 mongoose.connect('mongodb://localhost:27017/backendApp', { 
@@ -14,6 +15,8 @@ db.once("open",()=>{
 });
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/users", async (req,res) => {
     const users = await User.find({});
@@ -24,6 +27,15 @@ app.get("/users/:id", async(req,res)=>{
     const user = await User.findById(req.params.id);
     res.status(200).send(user);
 })
+
+app.post("/users", async (req,res) => {
+    User.create(req.body).then((result) => {
+        res.status(201).send({id:result._id});
+    })
+
+
+});
+
 
 app.listen(3000, ()=> {
     console.log("LISTENING ON PORT 3000!")
