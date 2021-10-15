@@ -36,6 +36,12 @@ app.post("/users", async (req,res) => {
 
 });
 
+app.delete("/users/:id",async(req,res) => {
+    User.findByIdAndRemove(req.params.id).then((result)=>{
+        res.status(200).send({message:"Successfully Deleted!"});
+    })
+})
+
 
 app.listen(3000, ()=> {
     console.log("LISTENING ON PORT 3000!")
