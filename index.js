@@ -40,7 +40,7 @@ app.post("/users", async (req,res) => {
     })
 });
 
-// HTTP Patch Request to update the user by id
+// HTTP Put Request to update the user by id
 app.put("/users/:id",async(req,res)=>{
     try{
         const user = await User.findOne({_id:req.params.id});
