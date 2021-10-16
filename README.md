@@ -22,15 +22,17 @@ RESTFul API using Node.JS, Express.JS, and MongoDB
               **GET** `/users`
               **Response Body**:-
                                    ```
-                                       {
-                                          "_id": "6167ef0fad7060784b6239d8",
-                                          "name": "XChilly",
-                                          "dob": "23/09/1994",
-                                          "address": "163 Carolyns Circle ",
-                                          "description": "To some extent I liken slavery to death",
-                                          "createdAt": "2021-10-14T08:49:19.413Z",
-                                          "__v": 0
-                                        }
+                                          [
+                                                 {
+                                                        "_id": "6167ef0fad7060784b6239d8",
+                                                         "name": "XChilly",
+                                                        "dob": "23/09/1994",
+                                                        "address": "163 Carolyns Circle ",
+                                                        "description": "To some extent I liken slavery to death",
+                                                        "createdAt": "2021-10-14T08:49:19.413Z",
+                                                        "__v": 0
+                                                 }
+                                          ]
                                    ```
        
        End-Point Name:- Create A User
@@ -64,7 +66,7 @@ RESTFul API using Node.JS, Express.JS, and MongoDB
                                                  "message": "Successfully Deleted!"
                                           }
                                    ```
-                                   
+
 
          
            
