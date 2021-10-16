@@ -45,7 +45,7 @@ RESTFul API using Node.JS, Express.JS, and MongoDB
                                    ```
        
        End-Point Name:- Update A User
-              **PUT** `/users/:id
+              **PUT** `/users/:id`
               **Response Body**:- 
                                    ```
                                           {
@@ -59,7 +59,7 @@ RESTFul API using Node.JS, Express.JS, and MongoDB
                                    ```
        
        End-Point Name:- Delete A User
-              **DELETE** `/users/:id
+              **DELETE** `/users/:id`
               **Response Body**:-
                                    ```
                                           {
