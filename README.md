@@ -9,9 +9,8 @@ RESTFul API using Node.JS, Express.JS, and MongoDB
        3. Postman
        4. IDE
 
-#### Installation:-
-
-     `git clone BackendApp`
+#### Installation:- 
+       1. Use `git clone BackendApp` to clone the repository in your local file system.
      
 
 
