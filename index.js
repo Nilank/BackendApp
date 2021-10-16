@@ -41,11 +41,11 @@ app.post("/users", async (req,res) => {
 });
 
 // HTTP Patch Request to update the user by id
-app.patch("/users/:id",async(req,res)=>{
+app.put("/users/:id",async(req,res)=>{
     try{
-        const user = await User.findOne({_id:req.params.id})
+        const user = await User.findOne({_id:req.params.id});
         if(req.body){
-            user = req.body
+            user.name = req.body.name
         }
 
         await user.save();
